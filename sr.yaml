@@ -1,0 +1,18 @@
+reviewer: mailto:user@example.com
+
+flows:
+  label:
+    steps:
+    - {run_embedded: 'generator https://sysrev.com/web-api/srvc-events?project-id=121802'}
+    - run_embedded: html src/embedded/label_web.html
+      labels: [groupblOdlb, overall include]
+labels:
+  groupblOdlb:
+    question: Relationships
+    required: false
+    json-schema: {"$id":"http://localhost:4061/web-api/srvc-json-schema?hash=QmQ4djRUAv7QmKL5KSZ3ZfvhRBBqgxcLjHyzXXf6uA4wVZ","type":"array","items":{"type":"object","srvcOrder":["stringwgdddI","categoricalLfOFUj","stringWODblq"],"properties":{"stringWODblq":{"type":"string","title":"Target","maxLength":100},"stringwgdddI":{"type":"string","title":"Source","maxLength":100},"categoricalLfOFUj":{"type":"array","items":{"enum":["inhibits","promotes"],"type":"string"},"title":"Relationship"}}},"title":"Relationships","$schema":"http://json-schema.org/draft-07/schema"}
+  overall include:
+    question: Include this article?
+    required: true
+    inclusion-values: [true]
+    json-schema: boolean
